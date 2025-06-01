@@ -144,39 +144,6 @@ async function updateFestival(id, festival) {
 // Lineups
 //////////////////////////////////////////
 
-// Get lineup for a specific festival
-async function getLineupByFestival(festivalId) {
-  let lineups = [];
-  try {
-    const collection = db.collection("lineUps");
-    //const query = { festivalId : new ObjectId(festivalId) }; // filter by festivalId
-
-  const query = [
-    {
-      '$match': {
-        'festivalId': new ObjectId(festivalId)
-      }
-    }
-  ];
-
-    lineups = await collection.aggregate(query).toArray();
-
-    lineups.forEach((entry) => {
-      entry._id = entry._id.toString(); // convert ObjectId to String
-      entry.festivalId = entry.festivalId.toString(); // convert ObjectId to String
-      entry.artistId = entry.artistId.toString(); // convert ObjectId to String
-    });
-
-    if (lineups.length === 0) {
-      console.log("No lineup for festival with id " + festivalId);
-    }
-  } catch (error) {
-    console.log(error.message);
-  }
-  return lineups;
-}
-
-
 // Get all artists of a specific festival
 async function getArtistsByFestival(festivalId) {
   let artists = [];
@@ -313,7 +280,6 @@ export default {
   createFestival,
   updateFestival,
   deleteFestival,
-  // getLineupByFestival,
   getFestivalsByArtist,
   getArtistsByFestival,
   addArtistToFestival

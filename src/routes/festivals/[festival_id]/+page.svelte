@@ -81,7 +81,7 @@
         {/each}
       </tbody>
     </table>
-    <div class="mt-3 mb-5">
+    <div class="mt-3">
       <button
         type="Button"
         class="btn btn-secondary"
