@@ -22,5 +22,6 @@
     </div>    
 
     <button type="submit" class="btn btn-primary"><i class="bi bi-floppy"></i> Save </button>
-    <button type="button" class="btn btn-secondary" onclick={() => window.history.back()}><i class="bi bi-x-circle"></i> Cancel</button>
+    <button type="button" class="btn btn-secondary" onclick={() => window.history.back()}>
+      <i class="bi bi-x-circle"></i> Cancel</button>
   </form>

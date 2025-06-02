@@ -5,7 +5,6 @@
   <h1>Add artist to {data.festival.name}</h1>
 
   <form method="POST" action="?/addArtist">
-
     <div class="mb-3">
       <label for="festivalId" class="form-label">FestivalId</label>
       <input name="festivalId" class="form-control" type="text" bind:value={data.festival._id} readonly />
@@ -18,7 +17,6 @@
       <label for="time" class="form-label">Time*</label>
       <input name="time" class="form-control" type="time" required />
     </div>
-
     <div class="mb-3">
       <label for="artist" class="form-label">Artist*</label>
       <select name="artist" class="form-select" required>

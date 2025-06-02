@@ -4,7 +4,7 @@
 
 <h1>Create a new festival</h1>
 
-<form method="POST" action="?/create" enctype="multipart/form-data">
+<form method="POST" action="?/create">
   <div class="mb-3">
     <label for="" class="form-label">Name*</label>
     <input name="name" class="form-control" type="text" required />
@@ -22,8 +22,8 @@
     <textarea name="description" class="form-control" rows="3"></textarea>
   </div>
   <button type="submit" class="btn btn-primary"><i class="bi bi-floppy"></i> Create Festival </button>
-  <button type="button" class="btn btn-secondary" onclick={() => window.history.back()}><i class="bi bi-x-circle"></i> Cancel</button
-  >
+  <button type="button" class="btn btn-secondary" onclick={() => window.history.back()}>
+  <i class="bi bi-x-circle"></i> Cancel</button>
 </form>
 
 {#if form?.success}

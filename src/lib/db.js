@@ -1,9 +1,10 @@
 import { MongoClient, ObjectId } from "mongodb"; // See https://www.mongodb.com/docs/drivers/node/current/quick-start/
-import { DB_URI } from "$env/static/private";
+import { DB_URI } from "$env/static/private"; //Connection String to MongoDB
 
-const client = new MongoClient(DB_URI);
+const client = new MongoClient(DB_URI); //MongoDB Client (Verbindung zu meiner Datenbank)
 
 await client.connect();
+
 const db = client.db("finalproject"); // select database
 
 //////////////////////////////////////////
@@ -34,6 +35,7 @@ async function getArtist(id) {
   let artist = null;
   try {
     const collection = db.collection("artists");
+
     const query = { _id: new ObjectId(id) }; // filter by id
 
     artist = await collection.findOne(query);
@@ -58,10 +60,11 @@ async function getFestivals() {
   try {
     const collection = db.collection("festivals");
 
-    const query = {};
+    const query = {}; // leeres query damit ich alle festivals erhalte
 
     // Get all objects that match the query, ordered by date ascending
     festivals = await collection.find(query).sort({ date: 1 }).toArray();
+    
     festivals.forEach((festival) => {
       festival._id = festival._id.toString(); // convert ObjectId to String
     });

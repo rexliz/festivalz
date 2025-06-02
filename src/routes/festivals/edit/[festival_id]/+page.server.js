@@ -1,6 +1,4 @@
 import db from "$lib/db.js";
-import fs from "fs";
-import path from "path";
 import { redirect } from "@sveltejs/kit";
 
 export async function load({ params }) {

@@ -1,12 +1,12 @@
 <script>
-  let { data } = $props();
-  let artists = data.artists;
-
   import ArtistCard from "$lib/components/ArtistCard.svelte";
+
+  let { data } = $props();
+  let artists = $state(data.artists);
 </script>
 
 <div class="container mt-3">
-  <h1>List of all Artists</h1>
+  <h1>All Artists</h1>
 
   <div class="row">
     {#each artists as artist}

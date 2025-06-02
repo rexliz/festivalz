@@ -1,6 +1,4 @@
 import db from "$lib/db.js";
-import fs from 'fs';
-import path from 'path';
 import { redirect } from "@sveltejs/kit";
 
 export const actions = {
@@ -11,6 +9,7 @@ export const actions = {
       name: data.get("name"),
       location: data.get("location"),
       date: data.get("date"),
+      description: data.get("description"),
       poster: '/images/festivals/default.png',
     };
     
